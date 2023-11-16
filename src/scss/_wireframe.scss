@@ -1,0 +1,33 @@
+div#app {
+  display: flex;
+  min-height: 100%;
+  border-color: navy;
+
+  :is(main, aside) {
+    >* {
+      display: flex;
+      border: thin solid #eee;
+      padding: 12px;
+      background-color: #fff;
+    }
+  }
+
+  >aside {
+    max-width: var(--asideWidth);
+    transition: var(--default-transition);
+  }
+
+  >aside,
+  >aside div.stage,
+  main,
+  div.stage {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #eee;
+
+    >header {
+      height: var(--headerHeight);
+    }
+  }
+}

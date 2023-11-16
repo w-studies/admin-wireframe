@@ -1,0 +1,42 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  font-style: normal;
+  color: currentColor;
+  text-align: left;
+  text-indent: -9999px;
+  direction: ltr;
+  box-sizing: border-box;
+  height: 10px;
+  width: 22px;
+
+
+  &:after,
+  &:before {
+    content: '';
+    pointer-events: none;
+  }
+
+
+  &.arrow-right {
+
+    &:after {
+      content: "";
+      display: block;
+      box-sizing: border-box;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: -2px;
+      margin: auto 0;
+      border-bottom: 2px solid;
+      border-right: 2px solid;
+      transition: all .3s ease;
+      transform: rotate(135deg);
+      right: 4px;
+    }
+  }
+}
+
+@import 'hamburger'

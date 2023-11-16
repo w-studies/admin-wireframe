@@ -1,0 +1,28 @@
+aside {
+  footer {
+    display: flex;
+    justify-content: end;
+  }
+
+  .stage {
+    background-color: #fff !important;
+  }
+}
+
+.sidebar-mini {
+  --asideWidth: var(--asideMiniWidth);
+
+  aside footer {
+    .icon {
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.sidebar-show {
+  aside {
+    margin-left: calc(var(--asideWidth)*-1)
+  }
+}
