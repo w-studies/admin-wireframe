@@ -2,7 +2,7 @@ import './scss/style.scss'
 
 const Body = document.querySelector('body')
 
-toggleSidebar = (className, e) => {
+const toggleSidebar = (className, e) => {
   e.preventDefault()
   Body.classList.toggle(className)
 }
