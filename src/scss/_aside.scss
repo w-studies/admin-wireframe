@@ -113,10 +113,20 @@ aside {
 .sidebar-mini {
   --asideWidth: var(--asideMiniWidth);
 
-  aside footer {
-    .icon {
-      &:after {
-        transform: rotate(-45deg);
+  aside {
+    nav {
+      a {
+        &:before {
+          right: -12px !important;
+        }
+      }
+    }
+
+    footer {
+      .icon {
+        &:after {
+          transform: rotate(-45deg);
+        }
       }
     }
   }
