@@ -1,6 +1,13 @@
-main>header {
-  display: flex;
-  flex-direction: row;
+.app-header {
   align-items: center;
   padding-left: 0 !important;
+  justify-content: space-between;
+  border-bottom: thin solid #ccc;
+
+  .avatar {
+    border-radius: 2rem;
+    border: thin solid #aaa;
+    height: 38px;
+    width: 38px;
+  }
 }

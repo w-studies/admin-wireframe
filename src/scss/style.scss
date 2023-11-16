@@ -7,6 +7,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #ddd;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
 }
 
 @import 'variables';
+@import 'mixins/index.scss';
 @import 'wireframe';
 @import 'icons';
 @import 'aside';

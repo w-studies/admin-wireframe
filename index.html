@@ -10,22 +10,52 @@
 
 <body>
   <div id="app">
-    <aside>
-      <header>Header</header>
-      <div class="stage">ASIDE</div>
-      <footer><a href="#" class='sidebar-mini'><i class="icon arrow-right"></i></a></footer>
-    </aside>
-    <main>
-      <header><a href="sidebar-show" class="hamburger">
-          <div class="layers"></div>
-        </a> HEADER</header>
-      <div class="stage">STAGE</div>
-      <footer>
-        <small>&copy; 2023 - Todos os direitos reservados</small>
-        <span>FOOTER</span>
-        <small>@washalbano</small>
-      </footer>
-    </main>
+    <header class='app-header'>
+      <a href="sidebar-show" class="hamburger">
+        <div class="layers"></div>
+      </a>
+      HEADER
+      <div class="avatar"></div>
+    </header>
+    <div class='app-body'>
+      <aside>
+        <header>Aside Header</header>
+        <nav>
+          <div>
+            <a href="#/support"><i>i</i> Suporte</a>
+          </div>
+          <div>
+            <a href="#/lives"><i>i</i> Lives</a>
+          </div>
+          <div>
+            <a href="#/reports"><i>i</i> Relatórios</a>
+            <div class="drop-nav-items">
+              <div>
+                <a href="#/reports/posts"><i>i</i> Ver Posts</a>
+              </div>
+              <div>
+                <a href="#/reports/categories"><i>i</i> Categorias</a>
+              </div>
+              <div>
+                <a href="#/reports/graduate-achievement"><i>i</i> Formandos</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a href="#/lives"><i>i</i> Matrículas</a>
+          </div>
+        </nav>
+        <footer><a href="#" class='sidebar-mini'><i class="icon arrow-right"></i></a></footer>
+      </aside>
+      <main>
+        <div class="stage">STAGE</div>
+        <footer>
+          <small>&copy; 2023 - Todos os direitos reservados</small>
+          <span>FOOTER</span>
+          <small>@washalbano</small>
+        </footer>
+      </main>
+    </div>
   </div>
   <script type="module" src="/src/main.js"></script>
 </body>

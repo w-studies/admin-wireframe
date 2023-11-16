@@ -1,11 +1,112 @@
 aside {
+  --resting-link-color: #666;
+  --hover-link-color: #3a952a;
+  --hover-link-dark-color: rgba(57, 147, 42, 0.5);
+  background-color: #2f353a !important;
+
   footer {
     display: flex;
     justify-content: end;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+
+    a {
+      color: #aaa;
+    }
   }
 
-  .stage {
-    background-color: #fff !important;
+  header {
+    transition: var(--default-transition);
+    width: var(--asideWidth);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #aaa;
+  }
+
+  nav {
+    padding: 0 !important;
+  }
+
+  nav i {
+    display: flex;
+    min-width: 17px;
+    min-height: 17px;
+    border: thin solid var(--resting-link-color);
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    color: var(--resting-link-color);
+    transition: var(--default-transition);
+  }
+
+  nav div {
+
+    a {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      border-bottom: thin solid #555;
+      color: var(--resting-link-color);
+      text-decoration: none;
+      transition: var(--default-transition);
+      overflow: hidden;
+      white-space: nowrap;
+
+      &:hover {
+        --resting-link-color: #fff;
+        background-color: var(--hover-link-color);
+      }
+
+      &.active {
+        --resting-link-color: #fff;
+        background-color: var(--hover-link-color);
+
+        &:before {
+          transform: rotateZ(-90deg);
+        }
+
+        +div.drop-nav-items {
+          max-height: 200px;
+        }
+      }
+    }
+
+    &:has(div.drop-nav-items) {
+      >a {
+        position: relative;
+
+        &:before {
+          position: absolute;
+          content: '';
+          display: block;
+          width: 12px;
+          height: 12px;
+          right: 12px;
+          transition: var(--default-transition);
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='%23fff' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+
+    div.drop-nav-items {
+      background-color: rgba(0, 0, 0, 0.3);
+      box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.75);
+      transition: var(--default-transition);
+      max-height: 0px;
+      overflow: hidden;
+
+      a {
+        padding-left: 18px;
+
+        &:hover {
+          --resting-link-color: #fff;
+          background-color: var(--hover-link-dark-color);
+        }
+      }
+    }
   }
 }
 
@@ -23,6 +124,7 @@ aside {
 
 .sidebar-show {
   aside {
-    margin-left: calc(var(--asideWidth)*-1)
+    transition: var(--default-transition);
+    margin-left: calc(var(--asideWidth)*-1);
   }
 }

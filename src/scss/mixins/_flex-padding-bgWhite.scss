@@ -1,0 +1,8 @@
+@mixin flex-padding($padding: 12px, $bg: transparent) {
+  display: flex;
+  padding-left: $padding;
+  padding-right: $padding;
+  padding-top: $padding;
+  padding-bottom: $padding;
+  background-color: $bg;
+}

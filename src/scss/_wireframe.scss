@@ -1,33 +1,43 @@
 div#app {
   display: flex;
+  flex-direction: column;
   min-height: 100%;
   border-color: navy;
 
+
   :is(main, aside) {
     >* {
-      display: flex;
-      border: thin solid #eee;
-      padding: 12px;
-      background-color: #fff;
+      @include flex-padding($padding: 12px, $bg: #2f353a);
     }
   }
 
-  >aside {
-    max-width: var(--asideWidth);
-    transition: var(--default-transition);
+
+  div.stage {
+    background-color: #eee;
   }
 
-  >aside,
-  >aside div.stage,
-  main,
-  div.stage {
+  .app-header {
+    height: var(--headerHeight);
+    @include flex-padding;
+  }
+
+  div.app-body,
+  div.app-body>aside,
+  div.app-body>aside nav,
+  div.stage,
+  main {
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: #eee;
 
-    >header {
-      height: var(--headerHeight);
+  }
+
+  div.app-body {
+    flex-direction: row;
+
+    >aside {
+      max-width: var(--asideWidth);
+      transition: all .3s ease;
     }
   }
 }
